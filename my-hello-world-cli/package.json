@@ -1,0 +1,14 @@
+{
+  "name": "my-hello-world-cli",
+  "version": "1.0.0",
+  "description": "My First Node.js CLIs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "my-hello-world-cli": "server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
