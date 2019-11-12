@@ -10,5 +10,8 @@
     "my-hello-world-cli": "server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.7"
+  }
 }
