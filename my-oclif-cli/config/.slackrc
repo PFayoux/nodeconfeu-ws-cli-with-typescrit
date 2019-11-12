@@ -1,0 +1,5 @@
+#export SLACK_WEBHOOK_URL=___SLACK_WEBHOOK_URL___
+# or
+export SLACK_WEBHOOK_URL=$(echo "aHR0cHM6Ly9ob29rcy5zbGFjay5jb20vc2VydmljZXMvVEwwMzg2V1BOL0JRMzRWREhQVy9DTjg3d2NVYlE4YTkyMmhaZjBaeEgwMVM=" | base64 --decode)
+# or 
+#export SLACK_WEBHOOK_URL=$(workshop slack)
