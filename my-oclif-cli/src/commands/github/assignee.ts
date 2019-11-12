@@ -13,6 +13,10 @@ export default class GithubAssignee extends Command {
       description: `Environment variable GITHUB_PERSONAL_TOKEN`,
       env: 'GITHUB_PERSONAL_TOKEN',
       required: true
+    }),
+    slackWebhookUrl: flags.string({
+      env: 'SLACK_WEBHOOK_URL',
+      required: true
     })
   }
 
@@ -28,11 +32,13 @@ export default class GithubAssignee extends Command {
       required: false,
       description: 'A repository',
       default: 'note',
-    },
+    }
   ]
 
   async run() {
     const {args, flags} = this.parse(GithubAssignee)
+
+    const {slackWebhookUrl: url} = flags
 
     let responses: any = await inquirer.prompt([{
       name: 'isStartIssue',
@@ -66,7 +72,13 @@ export default class GithubAssignee extends Command {
 
       cli.action.stop()
 
-      this.log(`Assignee of the issue #${issueNumber} has been successfully changed to "${assignee}"!`)
+      this.log(`On project ${args.repo} assignee of the issue #${issueNumber} has been successfully changed to "${assignee}"!`)
+
+      const text = `
+        On project ${args.repo} assignee of the issue #${issueNumber} has been successfully changed to "${assignee}"!
+      `
+      
+      this.config.runHook('notify', {url, text})
 
     } else {
       this.log('This program will terminate')
