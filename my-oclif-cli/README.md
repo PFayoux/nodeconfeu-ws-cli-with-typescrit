@@ -28,9 +28,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`my-oclif-cli github:issues [FILE]`](#my-oclif-cli-githubissues-file)
 * [`my-oclif-cli hello [FILE]`](#my-oclif-cli-hello-file)
 * [`my-oclif-cli help [COMMAND]`](#my-oclif-cli-help-command)
-* [`my-oclif-cli slack [FILE]`](#my-oclif-cli-slack-file)
+* [`my-oclif-cli slack TEXT`](#my-oclif-cli-slack-text)
+
+## `my-oclif-cli github:issues [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ my-oclif-cli github:issues [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/github/issues.ts](https://github.com/PFayoux/my-oclif-cli/blob/v0.0.0/src/commands/github/issues.ts)_
 
 ## `my-oclif-cli hello [FILE]`
 
@@ -69,18 +86,17 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.1/src/commands/help.ts)_
 
-## `my-oclif-cli slack [FILE]`
+## `my-oclif-cli slack TEXT`
 
-describe the command here
+Send a message to a channel in Slack
 
 ```
 USAGE
-  $ my-oclif-cli slack [FILE]
+  $ my-oclif-cli slack TEXT
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help                         show CLI help
+  --slackWebhookUrl=slackWebhookUrl  (required)
 ```
 
 _See code: [src/commands/slack.ts](https://github.com/PFayoux/my-oclif-cli/blob/v0.0.0/src/commands/slack.ts)_
