@@ -28,23 +28,43 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`my-oclif-cli github:issues [FILE]`](#my-oclif-cli-githubissues-file)
+* [`my-oclif-cli github:assignee [FILE]`](#my-oclif-cli-githubassignee-file)
+* [`my-oclif-cli github:issues [OWNER] [REPO]`](#my-oclif-cli-githubissues-owner-repo)
 * [`my-oclif-cli hello [FILE]`](#my-oclif-cli-hello-file)
 * [`my-oclif-cli help [COMMAND]`](#my-oclif-cli-help-command)
 * [`my-oclif-cli slack TEXT`](#my-oclif-cli-slack-text)
 
-## `my-oclif-cli github:issues [FILE]`
+## `my-oclif-cli github:assignee [FILE]`
 
 describe the command here
 
 ```
 USAGE
-  $ my-oclif-cli github:issues [FILE]
+  $ my-oclif-cli github:assignee [FILE]
 
 OPTIONS
   -f, --force
   -h, --help       show CLI help
   -n, --name=name  name to print
+```
+
+_See code: [src/commands/github/assignee.ts](https://github.com/PFayoux/my-oclif-cli/blob/v0.0.0/src/commands/github/assignee.ts)_
+
+## `my-oclif-cli github:issues [OWNER] [REPO]`
+
+Get a list of issues
+
+```
+USAGE
+  $ my-oclif-cli github:issues [OWNER] [REPO]
+
+ARGUMENTS
+  OWNER  [default: korzio] An owner of a repository
+  REPO   [default: note] A repository
+
+OPTIONS
+  -h, --help                                 show CLI help
+  --githubPersonalToken=githubPersonalToken  (required) Environment variable GITHUB_PERSONAL_TOKEN
 ```
 
 _See code: [src/commands/github/issues.ts](https://github.com/PFayoux/my-oclif-cli/blob/v0.0.0/src/commands/github/issues.ts)_
