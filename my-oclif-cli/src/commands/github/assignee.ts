@@ -66,6 +66,8 @@ export default class GithubAssignee extends Command {
 
       cli.action.stop()
 
+      this.log(`Assignee of the issue #${issueNumber} has been successfully changed to "${assignee}"!`)
+
     } else {
       this.log('This program will terminate')
     }
